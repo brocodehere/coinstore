@@ -3,7 +3,7 @@
   min-height: 100vh;
   color: white;
   padding: 20px;
-  position: relative; /* Ensures the badge is positioned relative to this container */
+  position: relative; 
   font-family: din, Helvetica, Arial, Roboto,PingFang SC, sans-serif;;
 }
 
@@ -23,16 +23,15 @@
 }
 
 .vip-badge {
-  position: absolute; /* Positions the badge relative to the profile-container */
-  right: 4vh; /* Distance from the right edge of the profile-container */
-  top: 3vh; /* Distance from the top edge of the profile-container */
+  position: absolute; 
+  right: 4vh;
+  top: 3vh;
   background-color: #ffd700;
   color: black;
   padding: 2px 8px;
   border-radius: 15px;
   font-size: 18px;
-  /* font-weight: bold; */
-  z-index: 1000; /* Ensures the badge stays on top of other elements */
+  z-index: 1000;
 }
   
   .user-info {
@@ -179,10 +178,10 @@
     position: absolute;
     width: 18px;
     height: 18px;
-    border: 2px solid #ffffff; /* Circle color */
-    border-radius: 50%; /* Circular shape */
-    /* border-top-color: transparent; Open-ended circle */
-    border-right-color: transparent; /* Open-ended circle */
+    border: 2px solid #ffffff; 
+    border-radius: 50%; 
+    /* border-top-color: transparent;
+    border-right-color: transparent;   
   }
   
   .icon-button-refresh::after {
@@ -190,15 +189,15 @@
     position: absolute;
     width: 6px;
     height: 6px;
-    border-top: 2px solid #ffffff; /* Arrowhead border */
+    border-top: 2px solid #ffffff; 
     border-right: 2px solid #ffffff;
-    transform: rotate(75deg); /* Arrowhead direction */
+    transform: rotate(75deg); 
     top: 6px;
     right: 8px;
   }
   
   .icon-button-refresh:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+    background-color: rgba(255, 255, 255, 0.1); 
     transition: background-color 0.3s ease;
   }
   
@@ -217,12 +216,12 @@
 
   @media (max-width: 768px) {
     .assets-section {
-      height: auto; /* Let the height adjust dynamically */
+      height: auto; 
       padding: 15px;
     }
   
     h1 {
-      font-size: 1.25rem; /* Adjust font size for smaller screens */
+      font-size: 1.25rem; 
     }
   
     p {
@@ -240,7 +239,7 @@
     }
   
     .assets-header h2 {
-      font-size: 1.2rem; /* Smaller font size for headers */
+      font-size: 1.2rem; 
     }
   
     h1 {
