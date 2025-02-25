@@ -117,13 +117,13 @@
   .remember-account {
     width: 100%;
     display: flex;
-    align-items: center; /* Vertically center the checkbox and text */
+    align-items: center; 
   }
   
   .checkbox-container {
     display: flex;
-    align-items: center; /* Vertically center the checkbox and text */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    align-items: center;
+    cursor: pointer; 
   }
   
   .checkbox-container input[type="checkbox"] {
@@ -133,25 +133,25 @@
   
   .checkbox-container .checkmark {
     display: inline-block;
-    width: 20px; /* Size of the checkbox */
-    height: 20px; /* Size of the checkbox */
-    background-color: transparent; /* Transparent background */
-    border: 2px solid #c8e745; /* Border color */
-    border-radius: 50%; /* Make it round */
-    margin-right: 8px; /* Space between checkbox and text */
+    width: 20px;
+    height: 20px; 
+    background-color: transparent;
+    border: 2px solid #c8e745;
+    border-radius: 50%; 
+    margin-right: 8px; 
     position: relative;
-    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+    transition: background-color 0.3s, border-color 0.3s; 
   }
   
 
   .checkbox-container input[type="checkbox"]:checked + .checkmark {
-    background-color: #c8e745; /* Fill the checkbox with color */
-    border-color: #c8e745; /* Ensure border color matches */
+    background-color: #c8e745; 
+    border-color: #c8e745; 
   }
   input[type="checkbox"] {
-    opacity: 0; /* Make the checkbox transparent */
-    position: absolute; /* Remove it from the document flow */
-    pointer-events: none; /* Ensure it doesn't block clicks */
+    opacity: 0; 
+    position: absolute;
+    pointer-events: none; 
   }
   .checkbox-container input[type="checkbox"]:checked + .checkmark::after {
     content: "";
@@ -164,7 +164,4 @@
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
   }
-  /* Style the checkmark when the checkbox is checked */
-  
-  /* Add a checkmark icon when the checkbox is checked */
-  
+ 
