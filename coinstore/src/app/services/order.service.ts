@@ -1,28 +1,33 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { isPlatformBrowser } from '@angular/common';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class orderService {
-  private apiUrl = 'http://82.29.164.124:3000/api/orders'; // API endpoint for orders
+export class OrderService {  // ✅ Fix class name (PascalCase)
+  private apiUrl = `${environment.apiUrl}/orders`; // ✅ Use environment variable
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object // ✅ Inject PLATFORM_ID to check if in browser
+  ) {}
 
-  createOrder(orderData: any) {
-    // Retrieve the JWT token from local storage
-    const token = localStorage.getItem('authToken');
-
-    // Check if the token exists
-    if (!token) {
-      throw new Error('No token found. Please log in.');
+  createOrder(orderData: any): Observable<any> {
+    if (!isPlatformBrowser(this.platformId)) {
+      return throwError(() => new Error('Cannot access localStorage on the server.'));
     }
 
-    // Set the Authorization header with the token
+    const token = localStorage.getItem('authToken');
+
+    if (!token) {
+      return throwError(() => new Error('No token found. Please log in.'));
+    }
+
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`,
     });
 
-    // Make the POST request with the headers
     return this.http.post(this.apiUrl, orderData, { headers });
   }
 }
