@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { UserDataService } from '../../services/user-data.service'; // Import the shared service
+import { UserDataService } from '../../services/user-data.service';
 
 
 @Component({
@@ -78,12 +78,11 @@ export class MineComponent implements OnInit {
   logout() {
     this.authService.logout().subscribe({
       next: () => {
-        // Redirect to login page or home page after logout
-        this.router.navigate(['/login']); // Adjust the route as needed
+                this.router.navigate(['/login']); 
       },
       error: (error) => {
         console.error('Logout failed:', error);
-        // Handle error (e.g., show toast message)
+       
       }
     });
   }
