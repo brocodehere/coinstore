@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class OrderhistoryService {
-  private apiUrl = 'http://localhost:3000/api/orderhistory'; // API endpoint for orders
+  private apiUrl = 'http://82.29.164.124:3000/api/orderhistory'; // API endpoint for orders
 
   constructor(private http: HttpClient) {}
 
