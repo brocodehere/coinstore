@@ -1,22 +1,27 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class OrderhistoryService {
-  private apiUrl = 'http://82.29.164.124:3000/api/orderhistory'; // API endpoint for orders
+  private apiUrl = `${environment.apiUrl}/orderhistory`; // ✅ Use environment variable
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   // Fetch orders for the logged-in user
   getOrders(): Observable<any> {
-    // Retrieve the JWT token from local storage
+    if (!isPlatformBrowser(this.platformId)) {
+      // If running on server, return an empty observable or handle appropriately
+      return throwError(() => new Error('Cannot access localStorage on the server.'));
+    }
+
     const token = localStorage.getItem('authToken');
 
-    // Check if the token exists
+    // If no token, return an observable error instead of throwing
     if (!token) {
-      throw new Error('No token found. Please log in.');
+      return throwError(() => new Error('No token found. Please log in.'));
     }
 
     // Set the Authorization header with the token
