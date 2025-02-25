@@ -4,7 +4,7 @@ import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class orderService {
-  private apiUrl = 'http://localhost:3000/api/orders'; // API endpoint for orders
+  private apiUrl = 'http://82.29.164.124:3000/api/orders'; // API endpoint for orders
 
   constructor(private http: HttpClient) {}
 
