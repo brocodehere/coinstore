@@ -17,7 +17,7 @@ export class LogInComponent {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService, // Add 'private' access modifier here
+    private authService: AuthService, 
     private router: Router
   ) {
     this.loginForm = this.fb.group({
