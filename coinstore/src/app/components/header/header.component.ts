@@ -33,8 +33,6 @@ import { NgClass } from '@angular/common';
       color: #8e98a7;
     }
     .active {
-      // justify-content:center;
-      // align-items:center;
       margin-left:-25%;
       color: #8e98a7;
       font-size:26px
