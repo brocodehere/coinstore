@@ -5,7 +5,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Observable, throwError } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class OrderService {  // ✅ Fix class name (PascalCase)
+export class orderService {  // ✅ Fix class name (PascalCase)
   private apiUrl = `${environment.apiUrl}/orders`; // ✅ Use environment variable
 
   constructor(
