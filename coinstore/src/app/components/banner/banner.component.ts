@@ -28,15 +28,6 @@ import { CommonModule } from '@angular/common';
       overflow: hidden;
       max-height:20vh;
     }
-    // .banner-content {
-    //   color: white;
-    //   z-index: 1;
-    //   position: relative;
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    //   height: 70vh;
-    //  }
     .image{
       height:50vh
     }
